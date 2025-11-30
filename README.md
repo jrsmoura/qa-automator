@@ -5,22 +5,26 @@
 - contato: jtrs@gft.com.br
 
 ---
+[28.11.2025] v0.0.1[JRSmoura]
+  
+  -- -- **changelog**:
+    . construção da v1 do `/prompts/prmt_main.pt`
+    . 
 
-[27.11.2025]
-
-v0.0.1[JRSmoura]
-
---- **changelog**: versão inicial com as diretrizes básicas e estruturas 
+[27.11.2025] v0.0.1[JRSmoura]
+  
+  -- **changelog**: 
+    . versão inicial com as diretrizes básicas e estruturas 
 
 ---
 
 ## Tecnologias
 
 * Python >= 3.13
-* Google-ADK >=1.18
+* Google-ADK >=1.16
 
 
-## Framworks disponíveis
+## Frameworks disponíveis
 
 (em ordem de prioridade)
 * Karate

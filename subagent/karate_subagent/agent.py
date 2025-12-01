@@ -1,29 +1,16 @@
-"""
-Orquestrador principal do sistema de automação de testes
-"""
-from google.adk.agent.agent import Agent
-from prompt import ORCHETRATOR_PRMT
-from subagent import karate_agent, cypress_agent
+from google.adk.agents import Agent
+from .prompt import KARATE_PRMPT
 
-
-# Configuração do agente orquestrador com delegação para subagentes
-orchestrator_agent = Agent(
-    name="QA Automation Orchestrator",
-    role="Orquestrador que gerencia e delega tarefas para agentes especializados em frameworks de teste",
-    prompt=ORCHETRATOR_PRMT,
-    delegates=[karate_agent, cypress_agent],
-    description="""
-    Agente principal responsável por:
-    - Receber requisições de criação de testes
-    - Identificar o framework apropriado (Karate ou Cypress)
-    - Delegar para o subagente especializado
-    - Coordenar a resposta final ao usuário
+karate_agent = Agent(
+    name="Karate_Subagent",
+    instruction=KARATE_PRMPT,
+    description=""""
+    Subagente especializado em gerar testes automatizados usando Cypress.
+    Cria arquivos .spec.js ou .cy.js com sintaxe moderna para testes E2E.
+    Segue as melhores práticas e padrões de mercado do Cypress Framework.
     """
 )
 
-
-def get_orchestrator():
-    """
-    Retorna a instância do orquestrador configurado
-    """
-    return orchestrator_agent
+def get_karate_agent() -> Agent:
+    """Retorna o subagente especializado em Karate Framework."""
+    return karate_agent

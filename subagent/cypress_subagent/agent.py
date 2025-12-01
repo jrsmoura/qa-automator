@@ -2,9 +2,8 @@ from google.adk.agents import Agent
 from .prompt import CYPRESS_PRMPT
 
 cypress_agent = Agent(
-    name="Cypress Subagent",
-    prompt=CYPRESS_PRMPT,
-    role="Especialista em criação de testes automatizados E2E usando Cypress Framework",
+    name="Cypress_Subagent",
+    instruction=CYPRESS_PRMPT,
     description=""""
     Subagente especializado em gerar testes automatizados usando Cypress.
     Cria arquivos .spec.js ou .cy.js com sintaxe moderna para testes E2E.

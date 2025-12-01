@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="qa-automator",
+    name="qa_automator",
     version="0.1.0",
     author="JRSMoura",
     author_email="jtrs@gft.com.br",
     description="Biblioteca para automação de criação de testes de QA.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/seu-usuario/seu-pacote",
+    url="https://github.com/jrsmoura/qa-automator",
     project_urls={
         "Bug Tracker": "https://github.com/jrsmoura/qa-automator",
         "Documentation": "https://qa-automator.readthedocs.io",

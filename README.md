@@ -1,28 +1,43 @@
 # Biblioteca de Automação de Testes
 
-- autor: JRS Moura
-- data: 26.11.2025
-- contato: <jtrs@gft.com.br>
+- author: JRSMoura
+- starting date: [26.11.2025]
+- contact: <jtsr@gft.com.br>
+- deadline: [05.12.2025]
 
 ---
 
 ## 📝 Changelog
 
-### [01.12.2025] v0.0.1
+### [01.12.2025] v0.0.2
 
-- ✅ Implementação completa dos subagentes Karate e Cypress
-- ✅ Integração do orquestrador com delegação via ADK
-- ✅ Sistema de prompts especializados
-- ✅ Configuração ADK Web
-- ✅ Documentação atualizada
+OBS.: 
+- ainda preciso colocar exemplos de saídas dos scripts de testes
+- avaliar se mantenho o `setup.py`, ou se altero para o `pyproject.toml`
+
+
+- ✨ Implementação inicial do `setup.py`
+- 📖 Reestruturação README.md
+- 🔨 Configuração .env
+- 🔨 Configuração do Karate
+  - - `agent.py`
+  - - `__init__.py`
+- 🔨 Configuração do Cypress
+  - - `prompt.py`
+  - - `agent.py`
+  - - `__init__.py`
+- ♻️ Integração do orquestrador/root com delegação via ADK
+- 🛠 Sistema de prompts especializados
+- 🔨 Configuração ADK Web
+- 📖 Documentação atualizada
 
 ### [28.11.2025] v0.0.1
 
-- ✅ Construção da v1 do `/prompts/prmt_main.py`
+- 🔨 Construção da v1 do `/prompts/prmt_main.py`
 
 ### [27.11.2025] v0.0.1
 
-- ✅ Versão inicial com diretrizes básicas e estruturas
+- 🔨 Versão inicial com diretrizes básicas e estruturas
 
 ---
 
@@ -173,7 +188,7 @@ qa_automator/
   - [ ] TESTES
 - [ ] Implementaçã dos frameworks
   - [ ] Karate
-    - [ ] `agent.py`
+    - [X] `agent.py`
     - [ ] `prompt.py`
     - [ ] TESTES
   - [X] Cypress
@@ -181,7 +196,7 @@ qa_automator/
     - [X] `prompt.py`
     - [ ] TESTES
   - [ ] Appium
-    - [ ]  `agent.py`
+    - [ ] `agent.py`
     - [ ] `prompt.py`
     - [ ] TESTES
   - [ ] JMeter

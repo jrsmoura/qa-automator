@@ -9,12 +9,11 @@
 
 ## 📝 Changelog
 
-### [01.12.2025] v0.0.2
-
 OBS.: 
 - ainda preciso colocar exemplos de saídas dos scripts de testes
 - avaliar se mantenho o `setup.py`, ou se altero para o `pyproject.toml`
 
+### [01.12.2025] v0.0.2
 
 - ✨ Implementação inicial do `setup.py`
 - 📖 Reestruturação README.md

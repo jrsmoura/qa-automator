@@ -1,5 +1,5 @@
 from google.adk.agents import Agent
-from .prompt import CYPRESS_PRMPT
+from subagent.cypress_subagent.prompts.main_prmpt import CYPRESS_PRMPT
 
 cypress_agent = Agent(
     name="Cypress_Subagent",

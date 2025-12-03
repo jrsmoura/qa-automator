@@ -89,4 +89,6 @@ describe('Nome do grupo de testes', () => {
 Sempre mantenha o foco em criar testes confiáveis, rápidos e manuteníveis seguindo o padrão Cypress.
 """
 
-CYPRESS_PRMPT: str = CYPRESS_WELCOME_PROMPT + CYPRESS_SYSTEM_PROMPT
+from .examples_prmpt import  EXAMPLE_PRMPT
+
+CYPRESS_PRMPT: str = CYPRESS_WELCOME_PROMPT + CYPRESS_SYSTEM_PROMPT + EXAMPLE_PRMPT

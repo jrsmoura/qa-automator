@@ -1,0 +1,7 @@
+#source: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+
+[build-system]
+
+[project]
+
+[project.scripts]

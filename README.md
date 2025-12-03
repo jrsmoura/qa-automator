@@ -13,6 +13,14 @@ OBS.:
 - ainda preciso colocar exemplos de saídas dos scripts de testes
 - avaliar se mantenho o `setup.py`, ou se altero para o `pyproject.toml`
 
+### [02.12.2025] v0.0.2
+
+- ✨ Adicionar exemplos para o Cypress:
+`subagent/cypress_subagent/promtps/examples_prmpt.py`
+- 🔨 Refatoração dos prompts do Cypress: 
+`subagent/cypress_subagent/promtp.py` -> `subagent/cypress_subagent/promtps/main_prmpt.py`
+
+
 ### [01.12.2025] v0.0.2
 
 - ✨ Implementação inicial do `setup.py`
@@ -52,8 +60,8 @@ Sistema multi-agente que automatiza a criação de testes para diferentes framew
 │  (QA Automation Orchestrator)       │
 └──────────────┬──────────────────────┘
                │
-       ┌───────┴────────┐
-       │                │
+       ┌───────┴───────┐
+       │               │
 ┌──────▼─────┐   ┌─────▼──────┐
 │  Karate    │   │  Cypress   │
 │  Agent     │   │  Agent     │
@@ -152,23 +160,28 @@ Orquestrador: Identifiquei que você precisa testar uma API. Vou delegar para o 
 
 ## 📁 Estrutura do Projeto
 
-```BASH
+```bash
 qa_automator/
-├── agent.py              # Orquestrador principal
-├── main.py              # Entry point da aplicação
-├── config.py            # Configurações
-├── prompt.py            # Prompt do orquestrador
-├── requirements.txt     # Dependências
-├── .env.example         # Exemplo de variáveis de ambiente
+├── agent.py                          # Orquestrador/root principal
+├── main.py                           # Entry point da aplicação
+├── config.py                         # Configurações
+├── main_prmpt.py                     # Prompt do orquestrador
+├── requirements.txt                  # Dependências
+├── .env.example                      # Exemplo de variáveis de ambiente
 ├── prompts/
-│   └── prmt_main.py     # Prompts do orquestrador
+│   └── prmt_main.py                  # Prompts do orquestrador
 └── subagent/
     ├── karate_subagent/
-    │   ├── agent.py     # Agente Karate
-    │   └── prompts.py   # Prompts Karate
+    │   ├── agent.py                  # Agente Karate
+    │   └── prompts/
+    │       ├── examples_prmpt.py     # Examples Karate
+    │       └── main_prmpt.py         # Prompts Karate
     └── cypress_subagent/
-        ├── agent.py     # Agente Cypress
-        └── prompts.py   # Prompts Cypress
+        ├── agent.py                  # Agente Cypress
+        └── prompts/
+        │   ├── examples_prmpt.py     # Examples Cypress
+        └── └── main_prmpt.py         # Prompts Cypress
+        
 ```
 
 ## TODO LIST - implementação
@@ -176,6 +189,7 @@ qa_automator/
 - [X] Estrutura de pastas base
 - [X] repositório git - pedir ao Agapito
 - [X] Configuração dos `__init__.py`
+- [ ] `main.py`
 - [ ] `config.py`
 - [ ] `USAGE.md`
 - [x] `setup.py`

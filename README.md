@@ -9,9 +9,22 @@
 
 ## 📝 Changelog
 
-OBS.: 
+OBS.:
+
 - ainda preciso colocar exemplos de saídas dos scripts de testes
 - avaliar se mantenho o `setup.py`, ou se altero para o `pyproject.toml`
+
+### [05.12.2025] v0.0.3
+
+- ✨ Conversão para lib
+- - ✨ templates
+- - ✨ cli
+- - ✨ main
+
+### [03.12.2025] v0.0.2
+
+- ✨ Conversão para `pyproject.toml`
+- ✨ Comando `qa-auto start`
 
 ### [02.12.2025] v0.0.2
 
@@ -199,7 +212,7 @@ qa_automator/
   - [X] `agent.py`
   - [X] `prompt.py`
   - [ ] TESTES
-- [ ] Implementaçã dos frameworks
+- [ ] Implementação dos frameworks
   - [ ] Karate
     - [X] `agent.py`
     - [ ] `prompt.py`

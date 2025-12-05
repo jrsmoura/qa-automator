@@ -69,7 +69,7 @@ describe('Nome do grupo de testes', () => {
     cy.get('[data-testid="elemento"]')
       .should('be.visible')
       .click();
-    
+
     cy.url().should('include', '/resultado');
     cy.contains('Mensagem esperada').should('exist');
   });
@@ -89,6 +89,5 @@ describe('Nome do grupo de testes', () => {
 Sempre mantenha o foco em criar testes confiáveis, rápidos e manuteníveis seguindo o padrão Cypress.
 """
 
-from .examples_prmpt import  EXAMPLE_PRMPT
 
-CYPRESS_PRMPT: str = CYPRESS_WELCOME_PROMPT + CYPRESS_SYSTEM_PROMPT + EXAMPLE_PRMPT
+# CYPRESS_PRMPT: str = CYPRESS_WELCOME_PROMPT + CYPRESS_SYSTEM_PROMPT + EXAMPLE_PRMPT

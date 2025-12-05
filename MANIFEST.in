@@ -1,0 +1,12 @@
+include README.md
+include LICENSE
+include pyproject.toml
+
+# Include all template files
+recursive-include qa_automator/templates *
+recursive-include qa_automator/templates/subagents *
+
+# Exclude Python bytecode
+global-exclude __pycache__
+global-exclude *.py[cod]
+global-exclude *.so

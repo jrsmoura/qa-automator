@@ -1,0 +1,5 @@
+from .prompts.examples_prmpt import EXAMPLE_PRMPT
+from .prompts.main_prmpt import CYPRESS_SYSTEM_PROMPT, CYPRESS_WELCOME_PROMPT
+
+CYPRESS_PRMPT: str = CYPRESS_WELCOME_PROMPT + \
+    CYPRESS_SYSTEM_PROMPT + EXAMPLE_PRMPT

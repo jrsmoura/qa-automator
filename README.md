@@ -1,4 +1,4 @@
-# Biblioteca de Automação de Testes
+# biblioteca de automação de testes
 
 - author: JRSMoura
 - starting date: [26.11.2025]
@@ -13,6 +13,9 @@ OBS.:
 
 - ainda preciso colocar exemplos de saídas dos scripts de testes
 - avaliar se mantenho o `setup.py`, ou se altero para o `pyproject.toml`
+
+### [12.12.2025] v0.0.3
+- Testes de instalação da lib
 
 ### [05.12.2025] v0.0.3
 
@@ -67,7 +70,7 @@ Sistema multi-agente que automatiza a criação de testes para diferentes framew
 
 ### Arquitetura
 
-```
+```bash
 ┌─────────────────────────────────────┐
 │    Orquestrador Principal           │
 │  (QA Automation Orchestrator)       │

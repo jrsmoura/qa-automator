@@ -1,6 +1,5 @@
 """Criador de projetos QA Automator"""
 
-
 from pathlib import Path
 from qa_automator.templates.base.base_templates import create_base_structure
 from qa_automator.templates.subagents.subagent_manager import get_subagent_copy_function
@@ -8,6 +7,7 @@ from qa_automator.templates.subagents.subagent_manager import get_subagent_copy_
 
 class ProjectCreator:
     """Gerencia a criação de projetos QA Automator"""
+
     FRAMEWORKS = {
         "1": {"name": "Karate", "key": "Karate"},
         "2": {"name": "Cypress", "key": "Cypress"},
@@ -38,7 +38,12 @@ class ProjectCreator:
                 continue
 
             # Validar nome do projeto (apenas letras, números, _, -)
-            if not project_name.replace("_", "").replace("-", "").replace(" ", "").isalnum():
+            if (
+                not project_name.replace("_", "")
+                .replace("-", "")
+                .replace(" ", "")
+                .isalnum()
+            ):
                 print("❌ Use apenas letras, números, '_', '-' e espaços")
                 continue
             self.project_name = project_name
@@ -51,11 +56,17 @@ class ProjectCreator:
 
     def ask_env_configuration(self):
         """Pergunta sobre configuração do arquivo .env"""
-        print("\\n🔐 Configuração do Google ADK")
-        response = input("Deseja criar o arquivo .env com as variáveis do \
-                         Google ADK? (s/n): ").strip().lower()
+        print("🔐 Configuração do Google ADK")
+        response = (
+            input(
+                "Deseja criar o arquivo .env com as variáveis do \
+                         Google ADK? (s/n): "
+            )
+            .strip()
+            .lower()
+        )
 
-        if response in ['s', 'sim', 'y', 'yes']:
+        if response in ["s", "sim", "y", "yes"]:
             self.create_env = True
             self.google_api_key = input("Digite sua GOOGLE_API_KEY: ").strip()
         else:
@@ -64,7 +75,7 @@ class ProjectCreator:
 
     def select_frameworks(self):
         """Permite seleção de múltiplos frameworks"""
-        print("\\n🧪 Frameworks de Teste Disponíveis:")
+        print("🧪 Frameworks de Teste Disponíveis:")
         print("=" * 40)
 
         for key, framework in self.FRAMEWORKS.items():
@@ -109,7 +120,9 @@ class ProjectCreator:
         self.project_path.mkdir(parents=True, exist_ok=True)
 
         # Criar estrutura base usando templates
-        create_base_structure(self.project_path, self.project_name, self.selected_frameworks)
+        create_base_structure(
+            self.project_path, self.project_name, self.selected_frameworks
+        )
 
         # Criar .env
         self.create_env_file()
@@ -126,7 +139,7 @@ class ProjectCreator:
         # Copiar subagentes selecionados
         subagent_path = self.project_path / "subagent"
         for framework in self.selected_frameworks:
-            copy_func = get_subagent_copy_function(framework['key'])
+            copy_func = get_subagent_copy_function(framework["key"])
             if copy_func:
                 copy_func(subagent_path)
 
@@ -188,7 +201,9 @@ Thumbs.db
 
     def create_readme(self):
         """Cria README.md do projeto"""
-        frameworks_list = "\\n".join([f"- {fw['name']}" for fw in self.selected_frameworks])
+        frameworks_list = "\\n".join(
+            [f"- {fw['name']}" for fw in self.selected_frameworks]
+        )
 
         readme_content = f"""# {self.project_name}
 

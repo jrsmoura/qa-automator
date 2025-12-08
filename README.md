@@ -14,8 +14,8 @@ OBS.:
 - ainda preciso colocar exemplos de saídas dos scripts de testes
 - avaliar se mantenho o `setup.py`, ou se altero para o `pyproject.toml`
 
-### [12.12.2025] v0.0.3
-- Testes de instalação da lib
+### [08.12.2025] v0.0.3
+- 🧪 Testes de instalação da lib
 
 ### [05.12.2025] v0.0.3
 
@@ -199,18 +199,24 @@ qa_automator/
         └── └── main_prmpt.py         # Prompts Cypress
         
 ```
+## ISSUES
+- [ ] Remover emojis do menu de instalação -> estão causando erros aleatórios de unicode
+- [ ] Arrumar erros de `\\n` no menu de instalação
+
+
+---
 
 ## TODO LIST - implementação
 
 - [X] Estrutura de pastas base
 - [X] repositório git - pedir ao Agapito
 - [X] Configuração dos `__init__.py`
-- [ ] `main.py`
-- [ ] `config.py`
-- [ ] `USAGE.md`
+- [X] `main.py`
+- [X] `config.py`
+- [X] `USAGE.md`
 - [x] `setup.py`
 - [X] estrutura de prompts
-- [ ] comando `qa-auto start`
+- [X] comando `qa-auto start`
 - [ ] orquestrador
   - [X] `agent.py`
   - [X] `prompt.py`

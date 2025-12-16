@@ -31,10 +31,10 @@ class ProjectCreator:
     def get_project_name(self):
         """Solicita o nome do projeto"""
         while True:
-            project_name = input("\\n📝 Digite o nome do projeto: ").strip()
+            project_name = input("\nDigite o nome do projeto: ").strip()
 
             if not project_name:
-                print("❌ O nome do projeto não pode ser vazio!")
+                print("O nome do projeto não pode ser vazio!")
                 continue
 
             # Validar nome do projeto (apenas letras, números, _, -)
@@ -44,23 +44,22 @@ class ProjectCreator:
                 .replace(" ", "")
                 .isalnum()
             ):
-                print("❌ Use apenas letras, números, '_', '-' e espaços")
+                print("Use apenas letras, números, '_', '-' e espaços")
                 continue
             self.project_name = project_name
             self.project_path = Path.cwd() / project_name
 
             if self.project_path.exists():
-                print(f"❌ O diretório '{project_name}' já existe!")
+                print(f"O diretório '{project_name}' já existe!")
                 continue
             break
 
     def ask_env_configuration(self):
         """Pergunta sobre configuração do arquivo .env"""
-        print("🔐 Configuração do Google ADK")
+        print("Configuração do Google ADK")
         response = (
             input(
-                "Deseja criar o arquivo .env com as variáveis do \
-                         Google ADK? (s/n): "
+                "Deseja criar o arquivo .env com as variáveis do Google ADK? (s/n): "
             )
             .strip()
             .lower()
@@ -75,13 +74,13 @@ class ProjectCreator:
 
     def select_frameworks(self):
         """Permite seleção de múltiplos frameworks"""
-        print("🧪 Frameworks de Teste Disponíveis:")
+        print("Frameworks de Teste Disponíveis:")
         print("=" * 40)
 
         for key, framework in self.FRAMEWORKS.items():
             print(f"{key}. {framework['name']}")
 
-        print("\\n💡 Digite os números separados por vírgula (ex: 1,2)")
+        print("\n Digite os números separados por vírgula (ex: 1,2)")
         print("   Ou pressione Enter para selecionar todos")
 
         while True:
@@ -99,22 +98,22 @@ class ProjectCreator:
 
                 for key in selected_keys:
                     if key not in self.FRAMEWORKS:
-                        print(f"❌ Opção inválida: {key}")
+                        print(f" Opção inválida: {key}")
                         raise ValueError()
                     self.selected_frameworks.append(self.FRAMEWORKS[key])
 
                 break
             except ValueError:
-                print("❌ Seleção inválida. Tente novamente.")
+                print(" Seleção inválida. Tente novamente.")
                 continue
 
-        print("\\n✅ Frameworks selecionados:")
+        print("\n Frameworks selecionados:")
         for fw in self.selected_frameworks:
             print(f"   - {fw['name']}")
 
     def create_project_structure(self):
         """Cria a estrutura de diretórios e arquivos"""
-        print(f"\\n🚀 Criando projeto '{self.project_name}'...")
+        print(f"\n Criando projeto '{self.project_name}'...")
 
         # Criar diretório raiz
         self.project_path.mkdir(parents=True, exist_ok=True)
@@ -133,9 +132,6 @@ class ProjectCreator:
         # Criar README
         self.create_readme()
 
-        # Criar requirements.txt
-        self.create_requirements()
-
         # Copiar subagentes selecionados
         subagent_path = self.project_path / "subagent"
         for framework in self.selected_frameworks:
@@ -143,7 +139,7 @@ class ProjectCreator:
             if copy_func:
                 copy_func(subagent_path)
 
-        print("✅ Estrutura criada com sucesso!")
+        print(" Estrutura criada com sucesso!")
 
     def create_env_file(self):
         """Cria o arquivo .env"""
@@ -158,7 +154,7 @@ AGENT_MODEL=gemini-2.5-flash
 """
 
         env_file = self.project_path / ".env"
-        env_file.write_text(env_content)
+        env_file.write_text(env_content, encoding='utf-8')
         print("   ├── Criado: .env")
 
     def create_gitignore(self):
@@ -196,12 +192,12 @@ Thumbs.db
 """
 
         gitignore_file = self.project_path / ".gitignore"
-        gitignore_file.write_text(gitignore_content)
+        gitignore_file.write_text(gitignore_content, encoding='utf-8')
         print("   ├── Criado: .gitignore")
 
     def create_readme(self):
         """Cria README.md do projeto"""
-        frameworks_list = "\\n".join(
+        frameworks_list = "\n".join(
             [f"- {fw['name']}" for fw in self.selected_frameworks]
         )
 
@@ -210,23 +206,17 @@ Thumbs.db
 Projeto de automação de testes criado com QA Automator, baseado
 em agentes do Google ADK.
 
-## 📋 Frameworks Configurados
+##  Frameworks Configurados
 
 {frameworks_list}
 
-## 🚀 Começando
+##  Começando
 
 ### 1. Configure o ambiente
 
 Certifique-se de ter Python 3.10+ instalado.
 
-### 2. Instale as dependências
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Configure as variáveis de ambiente
+### 2. Configure as variáveis de ambiente
 
 Edite o arquivo `.env` e adicione sua `GOOGLE_API_KEY`:
 
@@ -239,13 +229,13 @@ Para obter uma chave da API do Google:
 2. Crie uma nova chave de API
 3. Copie e cole no arquivo .env
 
-### 4. Execute o agente
+### 3. Execute o agente
 
 ```bash
-python main.py
+adk web
 ```
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 {self.project_name}/
@@ -262,7 +252,7 @@ python main.py
 └── requirements.txt        # Dependências Python
 ```
 
-## 🤖 Como Funciona
+##  Como Funciona
 
 Este projeto utiliza uma arquitetura de **agentes orquestradores**:
 
@@ -271,7 +261,7 @@ identifica qual framework é mais adequado
 2. **Sub-agentes Especializados** (`subagent/`): Cada um especializado em
 gerar testes para um framework específico
 
-## 📝 Uso
+##  Uso
 
 Edite o arquivo `main.py` para customizar a execução do seu agente. Você pode:
 
@@ -280,7 +270,7 @@ Edite o arquivo `main.py` para customizar a execução do seu agente. Você pode
 - Automatizar fluxos de trabalho
 - Criar novos sub-agentes
 
-## 🛠️ Desenvolvimento
+## ️ Desenvolvimento
 
 ### Adicionando Novos Sub-agentes
 
@@ -292,7 +282,7 @@ Edite o arquivo `main.py` para customizar a execução do seu agente. Você pode
 
 Edite os arquivos em `prompts/` para ajustar o comportamento do sistema.
 
-## 📚 Recursos
+##  Recursos
 
 - [Documentação Google ADK](https://google.github.io/genai-agents/)
 - [QA Automator](https://github.com/seu-usuario/qa-automator)
@@ -302,52 +292,25 @@ Edite os arquivos em `prompts/` para ajustar o comportamento do sistema.
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull
 requests.
 
-## 📄 Licença
+##  Licença
 
 Este projeto foi gerado pelo QA Automator.
 """
 
         readme_file = self.project_path / "README.md"
-        readme_file.write_text(readme_content)
+        readme_file.write_text(readme_content, encoding='utf-8')
         print("   ├── Criado: README.md")
-
-    def create_requirements(self):
-        """Cria requirements.txt com as dependências necessárias"""
-        requirements_content = """# Google ADK
-google-adk>=1.16.0
-
-# Environment Management
-python-dotenv>=1.0.0
-
-# Async Support
-aiosqlite>=0.20.0
-
-# HTTP Client
-httpx>=0.27.0
-
-# Data Validation
-pydantic>=2.0.0
-
-# Optional: Development Tools
-# pytest>=8.0.0
-# black>=24.0.0
-# flake8>=7.0.0
-"""
-
-        requirements_file = self.project_path / "requirements.txt"
-        requirements_file.write_text(requirements_content)
-        print("   ├── Criado: requirements.txt")
 
     def show_completion_message(self):
         """Exibe mensagem de conclusão"""
-        print("\\n" + "=" * 60)
-        print("🎉 Projeto criado com sucesso!")
+        print("\n" + "=" * 60)
+        print(" Projeto criado com sucesso!")
         print("=" * 60)
-        print(f"\\n📂 Localização: {self.project_path}")
-        print("\\n📋 Próximos passos:")
-        print(f"   1. cd {self.project_name}")
-        print("   2. pip install -r requirements.txt")
-        print("   3. Configure a GOOGLE_API_KEY no arquivo .env")
-        print("   4. python main.py")
-        print("\\n💡 Consulte o README.md para mais informações.")
-        print("\\n✨ Bons testes automatizados!\\n")
+        print(f"\n Localização: {self.project_path}")
+        print("\n Próximos passos:")
+        print(f"\t1. cd {self.project_name}")
+        print("\t2. pip install -r requirements.txt")
+        print("\t3. Configure o .env")
+        print("\t4. adk web")
+        print("\n💡 Consulte o README.md para mais informações.")
+        print("\n✨ Bons testes automatizados!\n")

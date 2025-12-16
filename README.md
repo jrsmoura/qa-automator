@@ -12,7 +12,12 @@
 OBS.:
 
 - ainda preciso colocar exemplos de saídas dos scripts de testes
-- avaliar se mantenho o `setup.py`, ou se altero para o `pyproject.toml`
+- ~~avaliar se mantenho o `setup.py`, ou se altero para o `pyproject.toml`~~
+
+
+### [15.12.2025] v0.0.3
+- Remoção dos emojis para evitar incompatibilidade com alguns terminais
+- Ajuste do menu de instalação
 
 ### [08.12.2025] v0.0.3
 - 🧪 Testes de instalação da lib
@@ -200,8 +205,8 @@ qa_automator/
         
 ```
 ## ISSUES
-- [ ] Remover emojis do menu de instalação -> estão causando erros aleatórios de unicode
-- [ ] Arrumar erros de `\\n` no menu de instalação
+- [X] Remover emojis do menu de instalação -> estão causando erros aleatórios de unicode
+- [X] Arrumar erros de `\\n` no menu de instalação
 
 
 ---
@@ -229,7 +234,7 @@ qa_automator/
   - [X] Cypress
     - [X] `agent.py`
     - [X] `prompt.py`
-    - [ ] TESTES
+    - [X] TESTES
   - [ ] Appium
     - [ ] `agent.py`
     - [ ] `prompt.py`

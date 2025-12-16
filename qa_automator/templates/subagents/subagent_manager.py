@@ -16,7 +16,7 @@ def copy_cypress_subagent(target_path: Path):
         shutil.copytree(source, destination)
         print(f"   ├── Cypress subagent configurado")
     else:
-        print(f"   ⚠️  Aviso: Template do Cypress não encontrado")
+        print(f"    Aviso: Template do Cypress não encontrado")
 
 
 def copy_karate_subagent(target_path: Path):
@@ -28,7 +28,7 @@ def copy_karate_subagent(target_path: Path):
         shutil.copytree(source, destination)
         print(f"   ├── Karate subagent configurado")
     else:
-        print(f"   ⚠️  Aviso: Template do Karate não encontrado")
+        print(f"     Aviso: Template do Karate não encontrado")
 
 
 def get_subagent_copy_function(framework_name: str):

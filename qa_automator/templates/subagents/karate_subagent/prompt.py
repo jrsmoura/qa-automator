@@ -1,7 +1,7 @@
 KARATE_WELCOME_PROMPT: str = """
-🌲 **Subagente Karate Framework Ativado**
+**Subagente Karate Framework Ativado**
 
-Vamos começar! 🚀
+Vamos começar! 
 """
 
 # TODO

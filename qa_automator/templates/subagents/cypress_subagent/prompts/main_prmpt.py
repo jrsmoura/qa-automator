@@ -1,5 +1,5 @@
 CYPRESS_WELCOME_PROMPT: str = """
-🌲 **Subagente Cypress Framework Ativado**
+ **Subagente Cypress Framework Ativado**
 
 Estou pronto para criar testes automatizados E2E usando Cypress!
 
@@ -19,7 +19,7 @@ Forneça detalhes sobre o teste que deseja criar:
 - Validações esperadas
 - Dados de teste necessários
 
-Vamos começar! 🚀
+Vamos começar!
 """
 
 

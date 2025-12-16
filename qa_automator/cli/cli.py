@@ -44,7 +44,7 @@ def show_version():
 def main():
     """Função principal do CLI"""
     if len(sys.argv) < 2:
-        print("❌ Erro: Nenhum comando fornecido")
+        print("Erro: Nenhum comando fornecido")
         show_help()
         sys.exit(1)
     command = sys.argv[1].lower()
@@ -57,7 +57,7 @@ def main():
     elif command in ["version", "--version", "-v"]:
         show_version()
     else:
-        print(f"❌ Erro: Comando desconhecido '{command}'")
+        print(f"Erro: Comando desconhecido '{command}'")
         show_help()
         sys.exit(1)
 

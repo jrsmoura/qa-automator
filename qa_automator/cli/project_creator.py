@@ -84,7 +84,7 @@ class ProjectCreator:
         print("   Ou pressione Enter para selecionar todos")
 
         while True:
-            selection = input("\\nFrameworks desejados: ").strip()
+            selection = input("\nFrameworks desejados: ").strip()
 
             if not selection:
                 # Selecionar todos
@@ -308,9 +308,7 @@ Este projeto foi gerado pelo QA Automator.
         print("=" * 60)
         print(f"\n Localização: {self.project_path}")
         print("\n Próximos passos:")
-        print(f"\t1. cd {self.project_name}")
-        print("\t2. pip install -r requirements.txt")
-        print("\t3. Configure o .env")
-        print("\t4. adk web")
+        print(f"\t1. Configure o {self.project_name}/.env com as variáveis que forem necessárias")
+        print("\t2. adk web")
         print("\n💡 Consulte o README.md para mais informações.")
         print("\n✨ Bons testes automatizados!\n")

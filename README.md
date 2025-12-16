@@ -11,8 +11,12 @@
 
 OBS.:
 
-- ainda preciso colocar exemplos de saídas dos scripts de testes
+- ~~ainda preciso colocar exemplos de saídas dos scripts de testes~~
 - ~~avaliar se mantenho o `setup.py`, ou se altero para o `pyproject.toml`~~
+
+
+### [16.12.2025] v0.0.3
+- Ajuste do menu de instalação
 
 
 ### [15.12.2025] v0.0.3

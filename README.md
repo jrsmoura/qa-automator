@@ -2,7 +2,7 @@
 
 - author: JRSMoura
 - starting date: [26.11.2025]
-- contact: <jtsr@gft.com.br>
+- contact: <jr.steiner@outlook.com>
 - deadline: [05.12.2025]
 
 ---
